@@ -175,3 +175,18 @@ button:hover {
     padding: 8px 16px;
   }
 }
+
+.income-list {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+.expense-list {
+  background-color: rgb(78, 56, 56);
+  width: 200px;
+  height: 200px;
+}
+.transaction-list {
+  display: flex;
+  justify-content: space-between;
+}
