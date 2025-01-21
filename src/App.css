@@ -176,17 +176,96 @@ button:hover {
   }
 }
 
+/* General styling for lists */
+/* Styling for transaction and income lists side by side */
+.transaction-list,
 .income-list {
-  background-color: red;
-  width: 200px;
-  height: 200px;
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
 }
-.expense-list {
-  background-color: rgb(78, 56, 56);
-  width: 200px;
-  height: 200px;
+/* Styling for delete button */
+.income-item .delete-btn,
+.transaction-item .delete-btn {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
 }
-.transaction-list {
+.income-item .delete-btn:hover,
+.transaction-item .delete-btn:hover {
+  background-color: #d9363e;
+}
+
+.transaction-list h3,
+.income-list h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Styling for individual items */
+.income-item,
+.transaction-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.income-item:hover,
+.transaction-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for item content */
+.income-item p,
+.transaction-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.income-item p:first-child,
+.transaction-item p:first-child {
+  font-weight: bold;
+}
+
+.income-item .amount,
+.transaction-item .amount {
+  font-size: 18px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.income-item .date,
+.transaction-item .date {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .income-item,
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .income-item p,
+  .transaction-item p {
+    margin-bottom: 5px;
+  }
 }
